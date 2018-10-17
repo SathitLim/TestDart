@@ -25,5 +25,10 @@ class Example02 implements IExercute
   @override
   void Excute() {
     // TODO: implement Excute
+    LoopProgram();
+  }
+
+  void LoopProgram(){
+    
   }
 }
