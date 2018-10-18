@@ -24,8 +24,21 @@ class Example02 implements IExercute
   @override
   void Excute() {
     var deck = new Deck();
-    deck.Shuffle();
-    //print(deck.toString());
-    print(deck.CardWithSuit('Hearts'));
+
+    //Shuffle card in deck and try print out list card in deck.
+    // deck.Shuffle();
+    // print(deck.toString());
+    
+    //Filter card in deck with suit.
+    //print(deck.CardWithSuit('Hearts'));
+
+    //Deal card in deck to other and remove from deck.
+    // var hand = deck.Deal(15);
+    // print(deck.toString());
+    // print(hand.toString());
+
+    //Try to remove card in deck and print out card in deck.
+    deck.RemoveCard('Hearts', 'Ace');
+    print(deck.toString());
   }
 }

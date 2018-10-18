@@ -15,7 +15,7 @@ class Deck{
 
     for (var suit in suits){
       for(var rank in ranks){
-        cards.add(new Card(suit , rank));
+        cards.add(new Card(suit: suit , rank: rank));
       }
     }
 
@@ -25,9 +25,24 @@ class Deck{
     cards.shuffle();
   }
 
-  CardWithSuit(String findSuit){
+  Iterable<Card> CardWithSuit(String findSuit){
     return cards.where((card) {
       return card.suit == findSuit;
+    });
+  }
+  // Iterable<Card> CardWithSuit(String findSuit){
+  //   return cards.where((card) => card.suit == findSuit);
+  // }
+
+  List<Card> Deal(int handsize){
+    var newCards = cards.sublist(0 , handsize);
+    cards = cards.sublist(handsize);
+    return newCards;
+  }
+
+  void RemoveCard(String suit , String rank){
+    cards.removeWhere((card) {
+      return card.suit == suit && card.rank == rank;
     });
   }
 
