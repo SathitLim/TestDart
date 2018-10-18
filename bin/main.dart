@@ -1,3 +1,5 @@
+library MyLibrary;
+
 import 'IExecute.dart';
 
 void main() {
