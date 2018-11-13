@@ -1,4 +1,5 @@
 import 'MyLibrary/Deck.dart';
+import 'test/example_extent_interface.dart';
 import 'Person.dart';
 
 abstract class IExercute {
@@ -41,4 +42,21 @@ class Example02 implements IExercute
     deck.RemoveCard('Hearts', 'Ace');
     print(deck.toString());
   }
+}
+// Test what difference between extent and implement. In dart class is interface type to if implement or extent for super class ability
+class Example03 implements IExercute {
+  @override
+  void Excute() {
+    Dog dog = new Dog();
+    Cat cat = new Cat();
+
+    print('Dog is age ${dog.age}');
+    dog.walk();
+    dog.yell();
+
+    print('\nCat is age ${cat.age}');
+    cat.walk();
+    cat.yell();
+  }
+
 }
